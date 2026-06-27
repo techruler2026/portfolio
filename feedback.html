@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amith | Client Feedback</title>
+  
+  <!-- Google Fonts - Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="icon" type="image/jpeg" href="images/favicon.jpg" />
+  <link rel="stylesheet" href="style.css" />
+  
+  <style>
+    /* Premium Feedback Page Styles */
+    body {
+      background-color: var(--navy-deepest);
+      overflow-x: hidden;
+    }
+    
+    .feedback-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    /* Dynamic Animated Background */
+    .premium-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: float 20s infinite alternate;
+      z-index: 0;
+    }
+    
+    .orb-1 {
+      top: -10%; left: -10%;
+      width: 50vw; height: 50vw;
+      background: radial-gradient(circle, rgba(21, 101, 255, 0.15) 0%, transparent 70%);
+      animation-delay: 0s;
+    }
+    
+    .orb-2 {
+      bottom: -20%; right: -10%;
+      width: 60vw; height: 60vw;
+      background: radial-gradient(circle, rgba(0, 180, 255, 0.12) 0%, transparent 70%);
+      animation-delay: -5s;
+    }
+    
+    @keyframes float {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(5%, 10%) scale(1.1); }
+    }
+    
+    /* Layout */
+    .feedback-main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      align-items: center;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 120px 5% 60px;
+      position: relative;
+      z-index: 10;
+      gap: 60px;
+      min-height: 100vh;
+    }
+    
+    @media (max-width: 992px) {
+      .feedback-main {
+        grid-template-columns: 1fr;
+        padding-top: 140px;
+        gap: 40px;
+      }
+    }
+    
+    /* Left Side - Typography & Trust */
+    .feedback-intro {
+      padding-right: 20px;
+    }
+    
+    .premium-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(21, 101, 255, 0.1);
+      border: 1px solid rgba(21, 101, 255, 0.2);
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--blue-glow);
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    .premium-tag i { color: #ffb400; }
+    
+    .feedback-intro h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      color: var(--white);
+      letter-spacing: -1px;
+    }
+    
+    .feedback-intro h1 span {
+      background: linear-gradient(135deg, #ffffff 0%, var(--blue-electric) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .feedback-intro p {
+      font-size: 18px;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+    
+    .trust-metrics {
+      display: flex;
+      gap: 40px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 30px;
+    }
+    
+    .metric { display: flex; flex-direction: column; }
+    
+    .metric-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    
+    .metric-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    
+    /* Right Side - Premium Form */
+    .feedback-glass-card {
+      background: rgba(13, 25, 48, 0.5);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 50px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 
+                  inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .feedback-glass-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 50%; height: 100%;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.03), transparent);
+      transform: skewX(-20deg);
+      animation: shine 8s infinite;
+    }
+    
+    @keyframes shine {
+      0% { left: -100%; }
+      20% { left: 200%; }
+      100% { left: 200%; }
+    }
+    
+    .premium-form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    
+    /* Floating Label Inputs */
+    .input-group {
+      position: relative;
+      width: 100%;
+    }
+    
+    .input-group input, 
+    .input-group textarea {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px 20px 16px;
+      font-size: 16px;
+      color: var(--white);
+      font-family: var(--font);
+      outline: none;
+      transition: all 0.3s ease;
+    }
+    
+    .input-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    .input-group label {
+      position: absolute;
+      left: 20px;
+      top: 18px;
+      color: var(--text-muted);
+      font-size: 15px;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+    
+    .input-group input:focus, 
+    .input-group textarea:focus,
+    .input-group input:not(:placeholder-shown),
+    .input-group textarea:not(:placeholder-shown) {
+      background: rgba(0, 0, 0, 0.4);
+      border-color: var(--blue-electric);
+      box-shadow: 0 0 0 4px rgba(21, 101, 255, 0.1);
+    }
+    
+    .input-group input:focus ~ label, 
+    .input-group textarea:focus ~ label,
+    .input-group input:not(:placeholder-shown) ~ label,
+    .input-group textarea:not(:placeholder-shown) ~ label {
+      top: 6px;
+      font-size: 11px;
+      color: var(--blue-electric);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    
+    .row-inputs {
+      display: flex;
+      gap: 24px;
+    }
+    
+    @media (max-width: 600px) {
+      .row-inputs { flex-direction: column; gap: 24px; }
+    }
+    
+    /* Interactive Star Rating */
+    .rating-container {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .rating-label {
+      color: var(--white);
+      font-weight: 500;
+      font-size: 15px;
+    }
+    
+    .rating-stars {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 8px;
+    }
+    
+    .rating-stars input { display: none; }
+    
+    .rating-stars label {
+      cursor: pointer;
+      font-size: 26px;
+      color: rgba(255, 255, 255, 0.1);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    
+    .rating-stars label:hover,
+    .rating-stars label:hover ~ label,
+    .rating-stars input:checked ~ label {
+      color: #ffb400;
+      transform: scale(1.15);
+      text-shadow: 0 0 15px rgba(255, 180, 0, 0.4);
+    }
+    
+    /* Premium Submit Button */
+    .btn-submit-premium {
+      width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, var(--blue-primary), var(--blue-glow));
+      color: var(--white);
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'Outfit', sans-serif;
+      letter-spacing: 1px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(21, 101, 255, 0.3);
+      position: relative;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    
+    .btn-submit-premium i { transition: transform 0.3s ease; }
+    
+    .btn-submit-premium:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(21, 101, 255, 0.5);
+    }
+    
+    .btn-submit-premium:hover i {
+      transform: translateX(4px) translateY(-4px);
+    }
+    
+    /* Success State */
+    .success-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(13, 25, 48, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      text-align: center;
+      padding: 40px;
+    }
+    
+    .success-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    
+    .success-icon {
+      width: 80px; height: 80px;
+      background: rgba(34, 197, 94, 0.1);
+      color: #22c55e;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      margin-bottom: 24px;
+      box-shadow: 0 0 0 10px rgba(34, 197, 94, 0.05);
+      animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+    
+    @keyframes popIn {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    
+    .success-overlay h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 28px;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    
+    .success-overlay p {
+      color: var(--text-light);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Keep Navbar simple & static for this page to look like a landing page */
+    .navbar.static {
+      position: absolute;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="feedback-wrapper">
+    <!-- Premium Background -->
+    <div class="premium-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar static">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo" style="text-decoration: none;">
+          <img src="images/logo.jpg" alt="AK Logo" class="logo-badge" />
+          <div class="logo-text">
+            <span class="logo-name">AMITH KUMAR</span>
+            <span class="logo-title">Account Executive</span>
+          </div>
+        </a>
+        <div class="nav-actions">
+          <a href="index.html" class="btn-outline">
+            <i class="fas fa-arrow-left"></i> Back to Home
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===================== FEEDBACK MAIN ===================== -->
+    <main class="feedback-main">
+      
+      <!-- Left Content -->
+      <div class="feedback-intro">
+        <div class="premium-tag">
+          <i class="fas fa-star"></i> Client Experience
+        </div>
+        <h1>Help me elevate my <span>services.</span></h1>
+        <p>Your insights drive my commitment to excellence. Whether it’s tax filing, GST compliance, or financial planning, let me know how I helped you achieve clarity and peace of mind.</p>
+        
+        <div class="trust-metrics">
+          <div class="metric">
+            <span class="metric-value">100+</span>
+            <span class="metric-label">Happy Clients</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">100%</span>
+            <span class="metric-label">Compliance</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">5.0</span>
+            <span class="metric-label">Average Rating</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Content Form -->
+      <div class="feedback-glass-card">
+        <form class="premium-form" id="premiumFeedbackForm">
+          <div class="row-inputs">
+            <div class="input-group">
+              <input type="text" id="fname" placeholder=" " required />
+              <label for="fname">Full Name</label>
+            </div>
+            <div class="input-group">
+              <input type="email" id="femail" placeholder=" " required />
+              <label for="femail">Email Address</label>
+            </div>
+          </div>
+          
+          <div class="rating-container">
+            <span class="rating-label">Overall Satisfaction</span>
+            <div class="rating-stars">
+              <input type="radio" id="star5" name="rating" value="5" />
+              <label for="star5" class="fas fa-star"></label>
+              <input type="radio" id="star4" name="rating" value="4" />
+              <label for="star4" class="fas fa-star"></label>
+              <input type="radio" id="star3" name="rating" value="3" />
+              <label for="star3" class="fas fa-star"></label>
+              <input type="radio" id="star2" name="rating" value="2" />
+              <label for="star2" class="fas fa-star"></label>
+              <input type="radio" id="star1" name="rating" value="1" />
+              <label for="star1" class="fas fa-star"></label>
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <textarea id="fmessage" placeholder=" " required></textarea>
+            <label for="fmessage">Share your experience...</label>
+          </div>
+          
+          <button type="submit" class="btn-submit-premium">
+            Send Feedback <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+        
+        <!-- Success Overlay inside the card -->
+        <div class="success-overlay" id="successOverlay">
+          <div class="success-icon"><i class="fas fa-check"></i></div>
+          <h3>Feedback Sent!</h3>
+          <p>Thank you for taking the time to share your experience. Your feedback is highly appreciated.</p>
+          <button type="button" class="btn-outline" style="margin-top: 24px;" onclick="window.location.href='index.html'">Return Home</button>
+        </div>
+      </div>
+      
+    </main>
+  </div>
+
+  <!-- Supabase CDN and Config -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script>
+    // Initialize Supabase Client
+    let _supabase = null;
+    try {
+      if (typeof SUPABASE_CONFIG !== 'undefined' && SUPABASE_CONFIG.url && SUPABASE_CONFIG.url !== "YOUR_SUPABASE_URL") {
+        _supabase = supabase.createClient(SUPABASE_CONFIG.url, SUPABASE_CONFIG.anonKey);
+      }
+    } catch (err) {
+      console.error("Supabase initialization error:", err);
+    }
+
+    document.getElementById('premiumFeedbackForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = this.querySelector('.btn-submit-premium');
+      const originalText = submitBtn.innerHTML;
+      
+      // Get values
+      const fname = document.getElementById('fname').value;
+      const femail = document.getElementById('femail').value;
+      const ratingEl = document.querySelector('input[name="rating"]:checked');
+      const rating = ratingEl ? parseInt(ratingEl.value, 10) : null;
+      const fmessage = document.getElementById('fmessage').value;
+
+      if (!rating) {
+        alert("Please select a rating.");
+        return;
+      }
+
+      // Visual feedback
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Verifying Email... <i class="fas fa-spinner fa-spin"></i>';
+
+      // Legitimacy Verification: Email deliverability & DNS check via Disify API
+      try {
+        const emailVerifyRes = await fetch(`https://disify.com/api/email/${encodeURIComponent(femail)}`);
+        if (emailVerifyRes.ok) {
+          const verifyData = await emailVerifyRes.json();
+          if (verifyData.format === false || verifyData.dns === false) {
+            alert("Legitimacy Check Failed: The email domain does not exist or is invalid.");
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+            return;
+          }
+          if (verifyData.disposable === true) {
+            alert("Legitimacy Check Failed: Disposable / temporary email addresses are not allowed.");
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn("Disify API verification failed or timed out. Skipping check. Details:", err);
+      }
+
+      submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+
+      if (!_supabase) {
+        console.warn("Supabase is not configured. Run the SQL setup and configure config.js with your project credentials to persist data.");
+        // Fallback to local success behavior so the form still functions visually
+        setTimeout(() => {
+          document.getElementById('successOverlay').classList.add('active');
+          this.reset();
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        }, 800);
+        return;
+      }
+
+      try {
+        const { error } = await _supabase
+          .from('feedback')
+          .insert([
+            {
+              full_name: fname,
+              email: femail,
+              rating: rating,
+              message: fmessage
+            }
+          ]);
+
+        if (error) throw error;
+
+        document.getElementById('successOverlay').classList.add('active');
+        this.reset();
+      } catch (error) {
+        console.error("Error submitting feedback:", error.message || error);
+        alert("There was an error saving your feedback: " + (error.message || "Please check your network and Supabase configuration."));
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
+    });
+  </script>
+</body>
+</html>

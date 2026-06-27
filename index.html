@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amith | Income Tax & Accounting Expert</title>
+  <meta name="description" content="Professional Income Tax Returns, GST Compliance, Financial Planning & Accounting Services. Trusted by 100+ clients across India." />
+  <meta name="keywords" content="Income Tax, ITR Filing, GST Compliance, TDS, Financial Reporting, Accounting, Tax Planning" />
+
+  <!-- Google Fonts - Inter (same as reference) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <link rel="icon" type="image/jpeg" href="images/favicon.jpg" />
+  <!-- International Telephone Input CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.4/build/css/intlTelInput.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="images/logo.jpg" alt="AK Logo" class="logo-badge" />
+        <div class="logo-text">
+          <span class="logo-name">AMITH KUMAR</span>
+          <span class="logo-title">Account Executive</span>
+        </div>
+      </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About Me</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#booking" class="nav-link">Booking</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="tel:+919110832302" class="nav-phone">
+          <i class="fas fa-phone"></i> +91 91108 32302
+        </a>
+        <a href="#booking" class="btn-book">
+          <i class="far fa-calendar-alt"></i> Book Consultation
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO SECTION ===================== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="images/hero-bg.png" alt="Financial background" class="hero-bg-img" />
+      <div class="hero-overlay"></div>
+      <!-- Animated particles -->
+      <div class="particles" id="particles"></div>
+    </div>
+
+    <div class="hero-container">
+      <div class="hero-content" data-aos="fade-right" data-aos-duration="900">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          INCOME TAX & ACCOUNTING EXPERT
+        </div>
+
+        <h1 class="hero-heading">
+          Professional ITR Filing & Financial Solutions<br />
+          You Can <span class="hero-accent typed-text" id="typedText">Trust</span>
+        </h1>
+
+        <p class="hero-desc">
+          Results-driven Account Executive with 2+ years of experience in accounting,<br />
+          financial management, and GST compliance. Proven expertise in Tally Prime,<br />
+          bookkeeping, TDS filing, and internal audits.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#services" class="btn-primary" id="fileItrBtn">
+            <i class="fas fa-paper-plane"></i> File ITR with Me
+          </a>
+          <a href="#booking" class="btn-secondary" id="bookConsultBtn">
+            <i class="far fa-calendar-alt"></i> Book Consultation
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-person">
+        <div class="person-glow"></div>
+        <img src="images/person-nobg.png" alt="Amith Kumar - Tax Professional" class="person-img" />
+      </div>
+
+      <!-- Service Cards (right panel) -->
+      <div class="hero-services" data-aos="fade-left" data-aos-duration="900" data-aos-delay="300">
+        <div class="hero-service-card" id="hsc1">
+          <div class="hsc-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <div class="hsc-info">
+            <strong>Income Tax Returns (ITR)</strong>
+            <span>For Individuals</span>
+          </div>
+        </div>
+        <div class="hero-service-card" id="hsc2">
+          <div class="hsc-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="hsc-info">
+            <strong>Tax Planning & Saving</strong>
+            <span>Smart & Compliant</span>
+          </div>
+        </div>
+        <div class="hero-service-card" id="hsc3">
+          <div class="hsc-icon"><i class="fas fa-shield-alt"></i></div>
+          <div class="hsc-info">
+            <strong>TDS & GST Compliance</strong>
+            <span>Timely & Error-Free</span>
+          </div>
+        </div>
+        <div class="hero-service-card" id="hsc4">
+          <div class="hsc-icon"><i class="fas fa-chart-pie"></i></div>
+          <div class="hsc-info">
+            <strong>Financial Reporting</strong>
+            <span>Clear & Actionable Insights</span>
+          </div>
+        </div>
+        <div class="hero-service-card" id="hsc5">
+          <div class="hsc-icon"><i class="fas fa-book"></i></div>
+          <div class="hsc-info">
+            <strong>Bookkeeping</strong>
+            <span>Accurate & Organized</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS BAR ===================== -->
+  <section class="stats-bar" id="stats">
+    <div class="stats-container">
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="0">
+        <div class="stat-icon"><i class="fas fa-user-tie"></i></div>
+        <div class="stat-content">
+          <div class="stat-number"><span class="counter" data-target="2">0</span>+</div>
+          <div class="stat-label">Years Experience</div>
+          <div class="stat-desc">Delivering reliable accounting<br />and tax solutions.</div>
+        </div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="stat-icon"><i class="fas fa-users"></i></div>
+        <div class="stat-content">
+          <div class="stat-number"><span class="counter" data-target="100">0</span>+</div>
+          <div class="stat-label">Clients Served</div>
+          <div class="stat-desc">Trusted by individuals and<br />businesses across India.</div>
+        </div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
+        <div class="stat-content">
+          <div class="stat-number"><span class="counter" data-target="100">0</span>%</div>
+          <div class="stat-label">Compliance</div>
+          <div class="stat-desc">Ensuring accuracy and<br />legal compliance.</div>
+        </div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="stat-icon"><i class="fas fa-award"></i></div>
+        <div class="stat-content">
+          <div class="stat-number"><span class="counter" data-target="0">0</span></div>
+          <div class="stat-label">Penalties</div>
+          <div class="stat-desc">Clean record of timely filings<br />and zero penalties.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT SECTION ===================== -->
+  <section class="about" id="about">
+    <div class="about-bg-pattern"></div>
+    <div class="section-container">
+      <div class="about-grid">
+        <div class="about-image-col" data-aos="fade-right" data-aos-duration="900">
+          <div class="about-img-wrap">
+            <div class="about-img-glow"></div>
+            <img src="images/about-person.png" alt="Amith Kumar" class="about-img" />
+
+          </div>
+        </div>
+
+        <div class="about-content-col" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+          <div class="section-tag">WHO I AM</div>
+          <h2 class="section-title left">About Me</h2>
+          <div class="section-underline left"></div>
+          <p class="about-desc">
+            I am <strong>Amith Kumar</strong>, a results-driven Account Executive with 2+ years of experience in accounting, financial management, and GST compliance. Proven expertise in Tally Prime, bookkeeping, TDS/PT filing, and internal audits. Currently pursuing CPA certification to enhance financial analysis capabilities. Strong track record of managing client accounts and ensuring regulatory compliance.
+          </p>
+          <p class="about-desc">
+            Specializing in ITR filing, GST compliance, TDS management, and strategic tax planning, I bring precision, transparency, and a client-first approach to every engagement.
+          </p>
+
+          <div class="skills-wrap">
+            <div class="skill-item">
+              <div class="skill-header">
+                <span>Tally Prime & QuickBooks</span><span>95%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" data-width="95" style="width:0%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span>Tax & GST Compliance</span><span>98%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" data-width="98" style="width:0%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span>Zoho & MS Office</span><span>90%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" data-width="90" style="width:0%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span>Internal Audits & Bookkeeping</span><span>92%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" data-width="92" style="width:0%"></div></div>
+            </div>
+          </div>
+
+          <div class="about-cta-row">
+            <a href="#booking" class="btn-primary">Book a Free Consultation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES SECTION ===================== -->
+  <section class="services" id="services">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag">WHAT I DO</div>
+        <h2 class="section-title">My Services</h2>
+        <div class="section-underline"></div>
+      </div>
+      <div class="services-header-action" data-aos="fade-left">
+        <a href="#contact" class="btn-view-all">View All Services <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card" id="sc1" data-aos="fade-up" data-aos-delay="0">
+          <div class="sc-icon-wrap">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3>Income Tax Returns (ITR)</h3>
+          <p>Accurate filing of ITR for Salaried, Freelancers, Professionals & Other Individuals.</p>
+          <a href="#contact" class="sc-link" aria-label="Learn more about ITR"><i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" id="sc2" data-aos="fade-up" data-aos-delay="80">
+          <div class="sc-icon-wrap">
+            <i class="fas fa-piggy-bank"></i>
+          </div>
+          <h3>Tax Planning & Saving</h3>
+          <p>Smart tax planning strategies to minimize tax liability and maximize savings.</p>
+          <a href="#contact" class="sc-link" aria-label="Learn more about Tax Planning"><i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" id="sc3" data-aos="fade-up" data-aos-delay="160">
+          <div class="sc-icon-wrap">
+            <i class="fas fa-receipt"></i>
+          </div>
+          <h3>TDS Services</h3>
+          <p>TDS calculation, payment & quarterly return filing with complete accuracy.</p>
+          <a href="#contact" class="sc-link" aria-label="Learn more about TDS Services"><i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" id="sc4" data-aos="fade-up" data-aos-delay="240">
+          <div class="sc-icon-wrap">
+            <i class="fas fa-balance-scale"></i>
+          </div>
+          <h3>GST Compliance</h3>
+          <p>GST registration, return filing & compliance for individuals & businesses.</p>
+          <a href="#contact" class="sc-link" aria-label="Learn more about GST Compliance"><i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" id="sc5" data-aos="fade-up" data-aos-delay="320">
+          <div class="sc-icon-wrap">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h3>Financial Reporting</h3>
+          <p>Monthly financial reports, analysis & insights for better decisions.</p>
+          <a href="#contact" class="sc-link" aria-label="Learn more about Financial Reporting"><i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" id="sc6" data-aos="fade-up" data-aos-delay="400">
+          <div class="sc-icon-wrap">
+            <i class="fas fa-search-dollar"></i>
+          </div>
+          <h3>Audit & Reconciliation</h3>
+          <p>Internal audits, bank reconciliations and discrepancy resolution.</p>
+          <a href="#contact" class="sc-link" aria-label="Learn more about Audit"><i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" id="sc7" data-aos="fade-up" data-aos-delay="480">
+          <div class="sc-icon-wrap">
+            <i class="fas fa-book"></i>
+          </div>
+          <h3>Bookkeeping & Accounting</h3>
+          <p>Professional bookkeeping, ledger maintenance, and daily transaction recording.</p>
+          <a href="#contact" class="sc-link" aria-label="Learn more about Bookkeeping"><i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE SECTION ===================== -->
+  <section class="experience" id="experience">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag">MY JOURNEY</div>
+        <h2 class="section-title">Work Experience</h2>
+        <div class="section-underline"></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="0">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tc-header">
+              <div class="tc-company">
+                <i class="fas fa-building"></i>
+                <strong>KGP and Co.</strong>
+              </div>
+              <span class="tc-date">March 2025 – Present</span>
+            </div>
+            <h4 class="tc-role">Account Executive</h4>
+            <p class="tc-desc">Manage comprehensive accounting operations, execute monthly GST filings, oversee TDS Payments, and conduct internal audits. Utilize Tally Prime for efficient bookkeeping, prepare financial statements, and coordinate with clients to ensure compliance with statutory deadlines.</p>
+            <div class="tc-tags">
+              <span>Accounting</span>
+              <span>GST Filings</span>
+              <span>TDS</span>
+              <span>Tally Prime</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item right" data-aos="fade-left" data-aos-delay="100">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tc-header">
+              <div class="tc-company">
+                <i class="fas fa-landmark"></i>
+                <strong>Skyarc Technologies LLP</strong>
+              </div>
+              <span class="tc-date">October 2025 – Present</span>
+            </div>
+            <h4 class="tc-role">Accounting & HR Manager (Part-time)</h4>
+            <p class="tc-desc">Dual role managing accounting functions and human resource operations. Managed day-to-day operations (sales, purchases, receipts), performed bank reconciliations, generated invoices, and prepared monthly financial reports to support management decision making.</p>
+            <div class="tc-tags">
+              <span>Bookkeeping</span>
+              <span>Bank Reconciliations</span>
+              <span>Invoicing</span>
+              <span>HR Operations</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tc-header">
+              <div class="tc-company">
+                <i class="fas fa-briefcase"></i>
+                <strong>MP Mohan & Co.</strong>
+              </div>
+              <span class="tc-date">October 2023 – December 2024</span>
+            </div>
+            <h4 class="tc-role">Accountant</h4>
+            <p class="tc-desc">Managed day-to-day accounting operations, prepared ledgers, and finalized books of accounts. Assisted in statutory and tax audits. Filed monthly GST returns and handled TDS calculations with zero delays, ensuring client financial records were accurate and compliant.</p>
+            <div class="tc-tags">
+              <span>Ledger Maintenance</span>
+              <span>Audits</span>
+              <span>GST Returns</span>
+              <span>TDS Calculations</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CERTIFICATIONS SECTION ===================== -->
+  <section class="certifications" id="certifications">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag">EDUCATION</div>
+        <h2 class="section-title">Qualifications</h2>
+        <div class="section-underline"></div>
+      </div>
+
+      <div class="cert-grid">
+        <div class="cert-card" id="cert0" data-aos="zoom-in" data-aos-delay="0">
+          <div class="cert-ribbon">Pursuing</div>
+          <div class="cert-icon"><i class="fas fa-user-graduate"></i></div>
+          <div class="cert-body">
+            <h4>Master of Business Administration (MBA)</h4>
+            <p>Manipal University Jaipur (Online)</p>
+            <span class="cert-year">Present</span>
+          </div>
+        </div>
+        <div class="cert-card" id="cert1" data-aos="zoom-in" data-aos-delay="100">
+          <div class="cert-ribbon">Completed</div>
+          <div class="cert-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="cert-body">
+            <h4>Bachelor of Commerce (B.Com)</h4>
+            <p>Bangalore City University, The National College-Basavanagudi</p>
+            <span class="cert-year">2021 – 2023</span>
+          </div>
+        </div>
+        <div class="cert-card" id="cert2" data-aos="zoom-in" data-aos-delay="200">
+          <div class="cert-ribbon">Completed</div>
+          <div class="cert-icon"><i class="fas fa-school"></i></div>
+          <div class="cert-body">
+            <h4>PUC</h4>
+            <p>Spurthy College</p>
+            <span class="cert-year">2019 – 2020</span>
+          </div>
+        </div>
+        <div class="cert-card" id="cert3" data-aos="zoom-in" data-aos-delay="300">
+          <div class="cert-ribbon">Completed</div>
+          <div class="cert-icon"><i class="fas fa-book-open"></i></div>
+          <div class="cert-body">
+            <h4>SSLC</h4>
+            <p>St. Mary's High School, Bangalore (KSEEB)</p>
+            <span class="cert-year">2018</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section class="testimonials">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag">CLIENT REVIEWS</div>
+        <h2 class="section-title">What Clients Say</h2>
+        <div class="section-underline"></div>
+      </div>
+
+      <div class="testimonials-grid" id="testimonialsGrid">
+        <div class="testimonial-card" id="tc1" data-aos="fade-up" data-aos-delay="0">
+          <div class="stars">★★★★★</div>
+          <p>"Amith filed my ITR within 24 hours with complete accuracy. Zero stress, zero errors. Highly recommended for anyone looking for a reliable tax professional!"</p>
+          <div class="testimonial-author">
+            <div class="ta-avatar">RK</div>
+            <div>
+              <strong>Rajesh Kumar</strong>
+              <span>Software Engineer, Hyderabad</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" id="tc2" data-aos="fade-up" data-aos-delay="100">
+          <div class="stars">★★★★★</div>
+          <p>"His GST compliance services saved us from multiple filing errors. Very professional, prompt, and always available for queries. Our business's go-to tax consultant."</p>
+          <div class="testimonial-author">
+            <div class="ta-avatar">PS</div>
+            <div>
+              <strong>Priya Sharma</strong>
+              <span>Business Owner, Bangalore</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" id="tc3" data-aos="fade-up" data-aos-delay="200">
+          <div class="stars">★★★★★</div>
+          <p>"Exceptional tax planning advice that helped me save significant amounts legally. Very transparent approach and detailed explanations. Worth every rupee!"</p>
+          <div class="testimonial-author">
+            <div class="ta-avatar">AM</div>
+            <div>
+              <strong>Arjun Mehta</strong>
+              <span>Freelancer & Entrepreneur</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BOOKING SECTION ===================== -->
+  <section class="booking" id="booking">
+    <div class="booking-bg"></div>
+    <div class="section-container">
+      <div class="booking-grid">
+        <div class="booking-info" data-aos="fade-right" data-aos-duration="900">
+          <div class="section-tag">SCHEDULE A CALL</div>
+          <h2 class="section-title left white">Book Your<br />Appointment</h2>
+          <div class="section-underline left"></div>
+          <p class="booking-desc">Ready to get started? Book your free initial consultation to discuss your tax and accounting needs.</p>
+
+          <div class="booking-features">
+            <div class="bf-item">
+              <div class="bf-icon"><i class="fas fa-check-circle"></i></div>
+              <span>Free 30-minute consultation</span>
+            </div>
+            <div class="bf-item">
+              <div class="bf-icon"><i class="fas fa-check-circle"></i></div>
+              <span>Expert ITR & GST guidance</span>
+            </div>
+            <div class="bf-item">
+              <div class="bf-icon"><i class="fas fa-check-circle"></i></div>
+              <span>100% confidential discussion</span>
+            </div>
+            <div class="bf-item">
+              <div class="bf-icon"><i class="fas fa-check-circle"></i></div>
+              <span>Flexible scheduling options</span>
+            </div>
+          </div>
+
+          <div class="contact-quick">
+            <a href="tel:+919110832302" class="cq-item" id="phoneLink">
+              <div class="cq-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <strong>Call Us</strong>
+                <span>+91 91108 32302</span>
+              </div>
+            </a>
+            <a href="mailto:amithanand7676@gmail.com" class="cq-item" id="emailLink">
+              <div class="cq-icon"><i class="fas fa-envelope"></i></div>
+              <div class="cq-info">
+                <strong>Email Us</strong>
+                <span>amithanand7676@gmail.com</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="booking-form-wrap" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+          <div class="booking-form-card">
+            <h3>Schedule Your Appointment</h3>
+            <form class="booking-form" id="bookingForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input type="text" id="firstName" name="firstName" placeholder="Your first name" required />
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" id="lastName" name="lastName" placeholder="Your last name" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 99999 99999" required />
+              </div>
+              <div class="form-group">
+                <label for="service">Service Required</label>
+                <select id="service" name="service">
+                  <option value="">Select a service...</option>
+                  <option value="itr">ITR Filing</option>
+                  <option value="gst">GST Compliance</option>
+                  <option value="tds">TDS Services</option>
+                  <option value="taxplanning">Tax Planning</option>
+                  <option value="bookkeeping">Bookkeeping & Accounting</option>
+                  <option value="financial">Financial Reporting</option>
+                  <option value="audit">Audit & Reconciliation</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="preferredDate">Preferred Date</label>
+                <input type="date" id="preferredDate" name="preferredDate" />
+              </div>
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="3" placeholder="Tell me about your requirements..."></textarea>
+              </div>
+              <button type="submit" class="btn-submit" id="submitBtn">
+                <span>Book Consultation</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </form>
+            <div class="form-success" id="formSuccess" style="display:none;">
+              <i class="fas fa-check-circle"></i>
+              <h4>Booking Confirmed!</h4>
+              <p>Thank you! We'll contact you within 24 hours to confirm your consultation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT SECTION ===================== -->
+  <section class="contact" id="contact">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag">GET IN TOUCH</div>
+        <h2 class="section-title">Contact Me</h2>
+        <div class="section-underline"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card" id="cc1" data-aos="fade-up" data-aos-delay="0">
+          <div class="cc-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h4>Office Address</h4>
+          <p>RM4C+84Q Yarandahalli,<br />Karnataka</p>
+        </div>
+        <div class="contact-card" id="cc2" data-aos="fade-up" data-aos-delay="100">
+          <div class="cc-icon"><i class="fas fa-phone-alt"></i></div>
+          <h4>Phone</h4>
+          <p><a href="tel:+919110832302">+91 91108 32302</a><br />Mon–Sat: 7AM–9AM & 6PM–9PM</p>
+        </div>
+        <div class="contact-card" id="cc3" data-aos="fade-up" data-aos-delay="200">
+          <div class="cc-icon"><i class="fas fa-envelope-open-text"></i></div>
+          <h4>Email</h4>
+          <p><a href="mailto:amithanand7676@gmail.com">amithanand7676@gmail.com</a><br />Response within 24 hours</p>
+        </div>
+        <div class="contact-card" id="cc4" data-aos="fade-up" data-aos-delay="300">
+          <div class="cc-icon"><i class="fas fa-clock"></i></div>
+          <h4>Working Hours</h4>
+          <p>Monday – Saturday:<br />7AM–9AM & 6PM–9PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-container">
+        <div class="footer-brand" data-aos="fade-up">
+          <div class="footer-logo">
+            <img src="images/logo.jpg" alt="AK Logo" class="logo-badge" />
+            <div class="logo-text">
+              <span class="logo-name">AMITH KUMAR</span>
+              <span class="logo-title">Account Executive</span>
+            </div>
+          </div>
+          <p class="footer-tagline">Helping individuals and businesses achieve financial clarity, compliance, and growth — with precision and integrity.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" id="linkedinLink" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-btn" id="twitterLink" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-btn" id="instagramLink" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn" id="youtubeLink" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-group" data-aos="fade-up" data-aos-delay="100">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#booking">Book Consultation</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group" data-aos="fade-up" data-aos-delay="200">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#services">Income Tax Returns</a></li>
+            <li><a href="#services">Tax Planning & Saving</a></li>
+            <li><a href="#services">TDS Services</a></li>
+            <li><a href="#services">GST Compliance</a></li>
+            <li><a href="#services">Bookkeeping</a></li>
+            <li><a href="#services">Financial Reporting</a></li>
+            <li><a href="#services">Audit & Reconciliation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact-info" data-aos="fade-up" data-aos-delay="300">
+          <h5>Contact Info</h5>
+          <div class="fci-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>RM4C+84Q Yarandahalli, Karnataka</span>
+          </div>
+          <div class="fci-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+919110832302">+91 91108 32302</a>
+          </div>
+          <div class="fci-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:amithanand7676@gmail.com">amithanand7676@gmail.com</a>
+          </div>
+          <div class="footer-badge">
+            <i class="fas fa-shield-alt"></i>
+            <span>100% Secure & Confidential</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-container row">
+        <p>© 2024 Amith Kumar. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- International Telephone Input JS -->
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.4/build/js/intlTelInput.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
