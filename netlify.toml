@@ -1,0 +1,16 @@
+[build]
+  # Publish directory is the root since it's a static site
+  publish = "."
+
+  # No build command is required for a plain HTML/JS/CSS site
+  command = ""
+
+# Secure headers configuration
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self' https: 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:; font-src 'self' https: data:;"
