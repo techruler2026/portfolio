@@ -7,5 +7,8 @@ const SUPABASE_CONFIG = {
 };
 
 // Web3Forms API Key (for email notifications)
-// Go to https://web3forms.com to get your free access key (emails will be sent to your signup address).
-const WEB3FORMS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
+// 1. Go to https://web3forms.com
+// 2. Enter the email address: amithanand7676@gmail.com to register.
+// 3. You will receive a free access key in your inbox.
+// 4. Replace "YOUR_WEB3FORMS_ACCESS_KEY" below with the key you received.
+const WEB3FORMS_KEY = "ab387343-2018-4d14-b7b0-487bfa489a1e";
