@@ -1214,14 +1214,42 @@ body {
 .testimonials {
   padding: var(--section-py) 24px;
   background: var(--navy-deepest);
+  overflow: hidden;
 }
 
-.testimonials-grid {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.testimonials-marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 30px 0;
+  /* Premium fading mask at the left and right edges */
+  mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+.testimonials-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+}
+
+.testimonials-track:hover {
+  animation-play-state: paused;
+}
+
+.testimonials-group {
+  display: flex;
   gap: 24px;
+  padding-right: 24px; /* Ensure visual alignment gap matches the display gap exactly for perfect loop */
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .testimonial-card {
@@ -1229,7 +1257,9 @@ body {
   border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 28px;
-  transition: all 0.4s var(--ease);
+  width: 380px;
+  flex-shrink: 0;
+  transition: all 0.3s var(--ease);
   position: relative;
 }
 
@@ -1246,14 +1276,9 @@ body {
 }
 
 .testimonial-card:hover {
-  border-color: rgba(68, 138, 255, 0.3);
+  border-color: rgba(68, 138, 255, 0.4);
   transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.25);
-}
-
-.testimonial-card.fade-out {
-  opacity: 0;
-  transform: translateY(15px) scale(0.98);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(68, 138, 255, 0.1);
 }
 
 .stars {
@@ -1875,7 +1900,7 @@ body {
   .timeline-card { width: calc(100% - 52px); }
   .timeline-dot { left: 20px; }
 
-  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonial-card { width: 300px; padding: 20px; }
   .booking-grid { grid-template-columns: 1fr; gap: 40px; }
   .contact-grid { grid-template-columns: repeat(2, 1fr); }
 

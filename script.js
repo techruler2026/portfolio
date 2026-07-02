@@ -581,8 +581,9 @@ console.log('%cBuilt with premium quality • $10,000 design', 'color:#00b4ff; f
 // LOAD DYNAMIC TESTIMONIALS FROM DATABASE (POSITIVE ONLY + ANIMATED)
 // =====================================================
 async function loadDynamicTestimonials() {
-  const testimonialsGrid = document.getElementById('testimonialsGrid');
-  if (!testimonialsGrid) return;
+  const group1 = document.getElementById('testimonialsGroup1');
+  const group2 = document.getElementById('testimonialsGroup2');
+  if (!group1 || !group2) return;
 
   // Verify Supabase client is initialized
   let _supabaseClient = null;
@@ -612,68 +613,24 @@ async function loadDynamicTestimonials() {
 
     if (feedbacks && feedbacks.length > 0) {
       // Clear fallback cards
-      testimonialsGrid.innerHTML = '';
+      group1.innerHTML = '';
+      group2.innerHTML = '';
       
-      // If we have <= 3 feedbacks, just show them statically
-      if (feedbacks.length <= 3) {
-        feedbacks.forEach((feedback, idx) => {
-          renderTestimonialCard(testimonialsGrid, feedback, idx);
-        });
-        if (typeof AOS !== 'undefined') AOS.refresh();
-        return;
+      // If we have fewer than 4 feedbacks, duplicate them to fill space
+      let itemsToRender = [...feedbacks];
+      while (itemsToRender.length < 4 && itemsToRender.length > 0) {
+        itemsToRender = itemsToRender.concat(feedbacks);
       }
 
-      // If we have > 3 feedbacks, we render the first 3 and start rotation
-      let currentIndex = 0;
-      
-      // Render first 3 reviews
-      for (let i = 0; i < 3; i++) {
-        const feedback = feedbacks[i];
-        if (feedback) renderTestimonialCard(testimonialsGrid, feedback, i);
-      }
+      // Render cards to group 1
+      itemsToRender.forEach((feedback, idx) => {
+        renderTestimonialCard(group1, feedback, idx);
+      });
+
+      // Clone group 1 cards to group 2 for seamless loop scrolling
+      group2.innerHTML = group1.innerHTML;
+
       if (typeof AOS !== 'undefined') AOS.refresh();
-
-      // Start the auto-rotation loop every 6 seconds
-      setInterval(() => {
-        const cards = testimonialsGrid.querySelectorAll('.testimonial-card');
-        
-        // 1. Trigger the fade-out/out-animation
-        cards.forEach(card => card.classList.add('fade-out'));
-        
-        setTimeout(() => {
-          // Increment starting index
-          currentIndex = (currentIndex + 3) % feedbacks.length;
-          
-          // 2. Update contents for the next set of reviews
-          cards.forEach((card, i) => {
-            const nextFeedbackIndex = (currentIndex + i) % feedbacks.length;
-            const feedback = feedbacks[nextFeedbackIndex];
-            
-            if (feedback) {
-              const starsCount = feedback.rating || 5;
-              const starsStr = '★'.repeat(starsCount) + '☆'.repeat(5 - starsCount);
-              
-              // Get initials
-              const nameParts = feedback.full_name.trim().split(' ');
-              const initials = nameParts.length > 1 
-                ? (nameParts[0][0] + nameParts[nameParts.length - 1][0]).toUpperCase() 
-                : nameParts[0].slice(0, 2).toUpperCase();
-                
-              card.querySelector('.stars').innerHTML = starsStr;
-              card.querySelector('p').innerHTML = `"${escapeHtml(feedback.message)}"`;
-              card.querySelector('.ta-avatar').innerHTML = escapeHtml(initials);
-              card.querySelector('strong').innerHTML = escapeHtml(feedback.full_name);
-            }
-          });
-          
-          // 3. Trigger the fade-in/in-animation
-          setTimeout(() => {
-            cards.forEach(card => card.classList.remove('fade-out'));
-          }, 50);
-          
-        }, 400); // Sync with CSS transition duration (400ms)
-        
-      }, 6000); // Rotation cycle duration
     }
   } catch (error) {
     console.warn("Could not load database reviews. Falling back to default reviews.", error.message || error);
@@ -693,8 +650,6 @@ function renderTestimonialCard(parent, feedback, idx) {
   const card = document.createElement('div');
   card.className = 'testimonial-card';
   card.id = `dyn-tc${idx}`;
-  card.setAttribute('data-aos', 'fade-up');
-  card.setAttribute('data-aos-delay', `${idx * 100}`);
 
   card.innerHTML = `
     <div class="stars">${starsStr}</div>
